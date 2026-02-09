@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engine Consulting — Innovación para su Liderazgo Competitivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'engine-beige': '#CBAD91',
+                        'engine-beige-light': '#D6B89D',
+                        'engine-beige-dark': '#AF9071',
+                        'engine-blue': '#222C4F',
+                        'engine-blue-dark': '#0E1730',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Gradient text effect */
+        .gradient-text {
+            background: linear-gradient(135deg, #AF9071 0%, #D6B89D 50%, #CBAD91 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Glass morphism effect */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(203, 173, 145, 0.1);
+        }
+        
+        /* Animated gradient background */
+        .animated-gradient {
+            background: linear-gradient(135deg, #0E1730 0%, #222C4F 50%, #0E1730 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Hover lift effect */
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(175, 144, 113, 0.2);
+        }
+        
+        /* Fade in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        /* Scroll indicator bounce */
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        /* Floating animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Pulse animation */
+        .pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Section divider */
+        .section-divider {
+            background: linear-gradient(90deg, transparent 0%, #AF9071 50%, transparent 100%);
+            height: 1px;
+            opacity: 0.3;
+        }
+        
+        /* Navbar scroll effect */
+        .navbar-scrolled {
+            background: rgba(14, 23, 48, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Button glow effect */
+        .btn-glow {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-glow:hover::before {
+            left: 100%;
+        }
+        
+        /* Service card shine effect */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            bottom: -50%;
+            left: -50%;
+            background: linear-gradient(to bottom, rgba(229, 229, 229, 0) 0%, rgba(175, 144, 113, 0.1) 50%, rgba(229, 229, 229, 0) 100%);
+            transform: rotate(45deg) translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .service-card:hover::after {
+            transform: rotate(45deg) translateX(100%);
+        }
+        
+        /* Process step animation */
+        .process-step {
+            position: relative;
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 2px;
+            height: 0;
+            background: linear-gradient(180deg, #AF9071 0%, transparent 100%);
+            transform: translateX(-50%);
+            animation: lineGrow 1s ease-out forwards;
+        }
+        
+        @keyframes lineGrow {
+            to { height: 100%; }
+        }
+        
+        /* Reveal on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-engine-blue-dark text-white animated-gradient">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="ISOLOGO_BLANCO.png" alt="Engine Logo" class="h-12 w-auto">
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#servicios" class="hover:text-engine-beige transition-colors duration-300">Servicios</a>
+                    <a href="#metodologia" class="hover:text-engine-beige transition-colors duration-300">Metodología</a>
+                    <a href="#nosotros" class="hover:text-engine-beige transition-colors duration-300">Nosotros</a>
+                    <a href="#contacto" class="bg-engine-beige text-engine-blue-dark px-6 py-2 rounded-full font-semibold hover:bg-engine-beige-light transition-all duration-300 btn-glow">Contacto</a>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-engine-beige rounded-full filter blur-3xl float pulse-slow"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-engine-beige-dark rounded-full filter blur-3xl float" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-engine-blue rounded-full filter blur-3xl pulse-slow" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+            <div class="mb-8 fade-in">
+                <img src="ISOLOGO_CIRCULO_BEIGE.png" alt="Engine" class="w-32 h-32 mx-auto mb-6 float">
+            </div>
+            
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight fade-in delay-100">
+                Somos el <span class="gradient-text">motor</span><br/>
+                que convierte<br/>
+                <span class="gradient-text">intención en acción</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto fade-in delay-200">
+                Impulsamos organizaciones con digitalización práctica, ingeniería de procesos 
+                y transformación medible desde el primer día.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in delay-300">
+                <a href="#contacto" class="bg-engine-beige text-engine-blue-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-engine-beige-light transition-all duration-300 hover-lift btn-glow">
+                    Agenda una llamada
+                </a>
+                <a href="#servicios" class="border-2 border-engine-beige text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-engine-beige/10 transition-all duration-300">
+                    Conoce más
+                </a>
+            </div>
+            
+            <div class="mt-20 scroll-indicator fade-in delay-400">
+                <svg class="w-6 h-6 mx-auto text-engine-beige" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="py-32 relative reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Propuesta de Valor</span>
+                    <h2 class="text-5xl font-black mt-4 mb-6">
+                        El motor de tu <span class="gradient-text">transformación</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 leading-relaxed mb-8">
+                        Impulsamos tu organización con digitalización práctica e ingeniería de procesos. 
+                        Trabajamos por etapas, con entregables claros e impacto medible desde el primer paso, 
+                        sin frenar la operación y acompañando a tu equipo de cerca.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-engine-beige" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">Impacto medible</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-engine-beige" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">Sin frenar operaciones</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-engine-beige" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">Acompañamiento cercano</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-full h-96 bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 rounded-3xl flex items-center justify-center border border-engine-beige/30 hover-lift service-card">
+                        <img src="ISOLOGO_BEIGE.png" alt="Engine Logo" class="w-64 h-auto float">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-32 reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Pilares</span>
+                <h2 class="text-5xl font-black mt-4 mb-6">
+                    Los pilares que nos <span class="gradient-text">definen</span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-effect rounded-2xl p-8 hover-lift service-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Transformación Digital</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Modernizamos tu gestión con flujos y tableros simples, automatizaciones 
+                        y datos confiables que impulsan decisiones inteligentes.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-effect rounded-2xl p-8 hover-lift service-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Ingeniería de Procesos</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Rediseñamos y estandarizamos para lograr orden, calidad y eficiencia 
+                        sostenibles en toda tu operación.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-effect rounded-2xl p-8 hover-lift service-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Evaluación de Proyectos</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Análisis profundo de factibilidad técnico-financiera de tus proyectos 
+                        de inversión para decisiones informadas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- Methodology Section -->
+    <section id="metodologia" class="py-32 reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Metodología</span>
+                <h2 class="text-5xl font-black mt-4 mb-6">
+                    Transformación <span class="gradient-text">por etapas</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Implementamos cambios de forma estructurada y sostenible, con resultados visibles en cada fase
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="relative process-step">
+                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-8 border border-engine-beige/30 h-full hover-lift service-card">
+                        <div class="text-6xl font-black text-engine-beige/30 mb-4">01</div>
+                        <h3 class="text-2xl font-bold mb-4">Diagnóstico + Quick Wins</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Mapeo rápido de la situación actual, priorización de oportunidades 
+                            y mejoras de alto impacto con KPIs iniciales.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative process-step">
+                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-8 border border-engine-beige/30 h-full hover-lift service-card">
+                        <div class="text-6xl font-black text-engine-beige/30 mb-4">02</div>
+                        <h3 class="text-2xl font-bold mb-4">Implementación Focalizada</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Automatizaciones clave, diseño de tableros de control y 
+                            estandarización de procesos críticos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative process-step">
+                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-8 border border-engine-beige/30 h-full hover-lift service-card">
+                        <div class="text-6xl font-black text-engine-beige/30 mb-4">03</div>
+                        <h3 class="text-2xl font-bold mb-4">Escalado & Sostenibilidad</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Mejora continua, desarrollo de métricas avanzadas, 
+                            gobierno de datos y formación del equipo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- About Section -->
+    <section id="nosotros" class="py-32 bg-gradient-to-b from-transparent to-engine-blue-dark/50 reveal">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 rounded-3xl p-12 border border-engine-beige/30 service-card">
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-engine-beige rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-engine-blue-dark font-bold text-xl">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Experiencia comprobada</h4>
+                                    <p class="text-gray-300">Múltiples proyectos de transformación exitosos</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-engine-beige rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-engine-blue-dark font-bold text-xl">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Enfoque práctico</h4>
+                                    <p class="text-gray-300">Soluciones implementables, no solo teoría</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-engine-beige rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-engine-blue-dark font-bold text-xl">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Resultados medibles</h4>
+                                    <p class="text-gray-300">KPIs claros en cada etapa del proceso</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Nosotros</span>
+                    <h2 class="text-5xl font-black mt-4 mb-6">
+                        Convertimos <span class="gradient-text">intención en acción</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 leading-relaxed mb-6">
+                        Somos un equipo especializado en transformación digital e ingeniería de procesos, 
+                        con experiencia en diversos sectores industriales y comerciales.
+                    </p>
+                    <p class="text-xl text-gray-300 leading-relaxed">
+                        Nuestra misión es ser el motor que impulsa a tu organización hacia la eficiencia, 
+                        la innovación y el crecimiento sostenible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-32 relative reveal">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-engine-beige rounded-full filter blur-3xl pulse-slow"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-engine-beige-dark rounded-full filter blur-3xl pulse-slow" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Contacto</span>
+                <h2 class="text-5xl font-black mt-4 mb-6">
+                    ¿Listo para <span class="gradient-text">transformar</span>?
+                </h2>
+                <p class="text-xl text-gray-300">
+                    Envianos tu consulta y coordina tu primera reunión de 20 minutos
+                </p>
+            </div>
+
+            <div class="glass-effect rounded-2xl p-8 md:p-12 service-card">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-300">Nombre y Apellido</label>
+                        <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors" placeholder="Juan Pérez">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-300">Email</label>
+                        <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors" placeholder="juan@empresa.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-300">Mensaje</label>
+                        <textarea rows="5" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors resize-none" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-engine-beige text-engine-blue-dark px-8 py-4 rounded-xl font-bold text-lg hover:bg-engine-beige-light transition-all hover-lift btn-glow">
+                        Enviar Mensaje
+                    </button>
+                </form>
+
+                <div class="mt-8 pt-8 border-t border-white/10 text-center">
+                    <p class="text-gray-300 mb-4">O agenda directamente por WhatsApp</p>
+                    <a href="https://wa.me/3364297328" target="_blank" class="inline-flex items-center gap-2 text-engine-beige hover:text-engine-beige-light transition-colors font-semibold">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="ISOLOGO_CIRCULO_BEIGE.png" alt="Engine" class="w-10 h-10">
+                    <div>
+                        <div class="font-bold text-lg">ENGINE</div>
+                        <div class="text-sm text-gray-400">Consulting</div>
+                    </div>
+                </div>
+                <div class="flex gap-8 text-sm text-gray-400">
+                    <a href="#servicios" class="hover:text-engine-beige transition-colors">Servicios</a>
+                    <a href="#metodologia" class="hover:text-engine-beige transition-colors">Metodología</a>
+                    <a href="#nosotros" class="hover:text-engine-beige transition-colors">Nosotros</a>
+                    <a href="#contacto" class="hover:text-engine-beige transition-colors">Contacto</a>
+                </div>
+                <div class="text-sm text-gray-400">
+                    © 2026 Engine Consulting. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            // Implementar menú móvil según necesidad
+            alert('Menú móvil - por implementar');
+        }
+    </script>
+</body>
+</html>
