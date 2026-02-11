@@ -603,18 +603,18 @@
             </div>
 
             <div class="glass-effect rounded-2xl p-8 md:p-12 service-card">
-                <form class="space-y-6">
+               <form action="https://formspree.io/f/mkovgozd" method="POST" class="space-y-6">
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-gray-300">Nombre y Apellido</label>
-                        <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors" placeholder="Juan Pérez">
+                        <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors" placeholder="Juan Pérez">
                     </div>
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-gray-300">Email</label>
-                        <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors" placeholder="juan@empresa.com">
+                        <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors" placeholder="juan@empresa.com">
                     </div>
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-gray-300">Mensaje</label>
-                        <textarea rows="5" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors resize-none" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                        <textarea name="message" rows="5" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors resize-none" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
                     </div>
                     <button type="submit" class="w-full bg-engine-beige text-engine-blue-dark px-8 py-4 rounded-xl font-bold text-lg hover:bg-engine-beige-light transition-all hover-lift btn-glow">
                         Enviar Mensaje
