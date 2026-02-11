@@ -184,12 +184,11 @@
         .process-step::before {
             content: '';
             position: absolute;
-            left: 50%;
+            left: 0;
             top: 0;
             width: 2px;
             height: 0;
             background: linear-gradient(180deg, #AF9071 0%, transparent 100%);
-            transform: translateX(-50%);
             animation: lineGrow 1s ease-out forwards;
         }
         
@@ -208,6 +207,62 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+            opacity: 0;
+        }
+        
+        .mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+
+        /* Force navbar background when mobile menu is open */
+        .mobile-menu.open ~ .nav-bg-trigger,
+        #navbar:has(.mobile-menu.open) {
+            background: rgba(14, 23, 48, 0.98);
+            backdrop-filter: blur(12px);
+        }
+        
+        /* Hamburger animation */
+        .hamburger-line {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform-origin: center;
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
+        /* Responsive typography & spacing */
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .section-padding {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+            .team-name {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-engine-blue-dark text-white animated-gradient">
@@ -216,7 +271,7 @@
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <img src="ISOLOGO_BLANCO.png" alt="Engine Logo" class="h-12 w-auto">
+                    <img src="ISOLOGO_BLANCO.png" alt="Engine Logo" class="h-10 md:h-12 w-auto">
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#servicios" class="hover:text-engine-beige transition-colors duration-300">Servicios</a>
@@ -225,11 +280,22 @@
                     <a href="#contacto" class="bg-engine-beige text-engine-blue-dark px-6 py-2 rounded-full font-semibold hover:bg-engine-beige-light transition-all duration-300 btn-glow">Contacto</a>
                 </div>
                 <!-- Mobile menu button -->
-                <button class="md:hidden" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <button id="hamburger-btn" class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <line class="hamburger-line" x1="3" y1="4" x2="21" y2="4"/>
+                        <line class="hamburger-line" x1="3" y1="12" x2="21" y2="12"/>
+                        <line class="hamburger-line" x1="3" y1="20" x2="21" y2="20"/>
                     </svg>
                 </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="flex flex-col space-y-4 pt-4 pb-6 border-t border-white/10 mt-4">
+                    <a href="#servicios" class="text-lg hover:text-engine-beige transition-colors py-2" onclick="closeMobileMenu()">Servicios</a>
+                    <a href="#metodologia" class="text-lg hover:text-engine-beige transition-colors py-2" onclick="closeMobileMenu()">Metodología</a>
+                    <a href="#nosotros" class="text-lg hover:text-engine-beige transition-colors py-2" onclick="closeMobileMenu()">Nosotros</a>
+                    <a href="#contacto" class="bg-engine-beige text-engine-blue-dark px-6 py-3 rounded-full font-semibold text-center hover:bg-engine-beige-light transition-all" onclick="closeMobileMenu()">Contacto</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -245,30 +311,30 @@
         
         <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
             <div class="mb-8 fade-in">
-                <img src="ISOLOGO_CIRCULO_BEIGE.png" alt="Engine" class="w-32 h-auto mx-auto mb-6 float">
+                <img src="ISOLOGO_CIRCULO_BEIGE.png" alt="Engine" class="w-20 md:w-32 h-auto mx-auto mb-4 md:mb-6 float">
             </div>
             
-            <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight fade-in delay-100">
+            <h1 class="hero-title text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-4 md:mb-6 leading-tight fade-in delay-100">
                 Somos el <span class="gradient-text">motor</span><br/>
                 que convierte<br/>
                 <span class="gradient-text">intención en acción</span>
             </h1>
             
-            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto fade-in delay-200">
+            <p class="text-base sm:text-lg md:text-2xl text-gray-300 mb-8 md:mb-12 max-w-3xl mx-auto fade-in delay-200 px-2">
                 Impulsamos organizaciones con digitalización práctica, ingeniería de procesos 
                 y transformación medible desde el primer día.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in delay-300">
-                <a href="#contacto" class="bg-engine-beige text-engine-blue-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-engine-beige-light transition-all duration-300 hover-lift btn-glow">
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center fade-in delay-300 px-4 sm:px-0">
+                <a href="#contacto" class="bg-engine-beige text-engine-blue-dark px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-engine-beige-light transition-all duration-300 hover-lift btn-glow">
                     Agenda una llamada
                 </a>
-                <a href="#servicios" class="border-2 border-engine-beige text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-engine-beige/10 transition-all duration-300">
+                <a href="#servicios" class="border-2 border-engine-beige text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-engine-beige/10 transition-all duration-300">
                     Conoce más
                 </a>
             </div>
             
-            <div class="mt-20 scroll-indicator fade-in delay-400">
+            <div class="mt-12 md:mt-20 scroll-indicator fade-in delay-400">
                 <svg class="w-6 h-6 mx-auto text-engine-beige" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>
@@ -277,15 +343,15 @@
     </section>
 
     <!-- Value Proposition -->
-    <section class="py-32 relative reveal">
+    <section class="py-16 md:py-32 relative reveal">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div>
                     <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Propuesta de Valor</span>
-                    <h2 class="text-5xl font-black mt-4 mb-6">
+                    <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-black mt-4 mb-4 md:mb-6">
                         El motor de tu <span class="gradient-text">transformación</span>
                     </h2>
-                    <p class="text-xl text-gray-300 leading-relaxed mb-8">
+                    <p class="text-base md:text-xl text-gray-300 leading-relaxed mb-6 md:mb-8">
                         Impulsamos tu organización con digitalización práctica e ingeniería de procesos. 
                         Trabajamos por etapas, con entregables claros e impacto medible desde el primer paso, 
                         sin frenar la operación y acompañando a tu equipo de cerca.
@@ -312,8 +378,8 @@
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="w-full h-96 bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 rounded-3xl flex items-center justify-center border border-engine-beige/30 hover-lift service-card">
-                        <img src="LOGO HORIZONTAL ORIGINAL BLANCO.png" alt="Engine Logo" class="w-100 h-auto float mt-10">
+                    <div class="w-full h-64 md:h-96 bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 rounded-3xl flex items-center justify-center border border-engine-beige/30 hover-lift service-card">
+                        <img src="LOGO HORIZONTAL ORIGINAL BLANCO.png" alt="Engine Logo" class="w-3/4 md:w-100 h-auto float mt-6 md:mt-10">
                     </div>
                 </div>
             </div>
@@ -323,19 +389,19 @@
     <div class="section-divider max-w-4xl mx-auto"></div>
 
     <!-- Services Section -->
-    <section id="servicios" class="py-32 reveal">
+    <section id="servicios" class="py-16 md:py-32 reveal">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
+            <div class="text-center mb-12 md:mb-20">
                 <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Pilares</span>
-                <h2 class="text-5xl font-black mt-4 mb-6">
+                <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-black mt-4 mb-4 md:mb-6">
                     Los pilares que nos <span class="gradient-text">definen</span>
                 </h2>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
                 <!-- Service 1 -->
-                <div class="glass-effect rounded-2xl p-8 hover-lift service-card">
-                    <div class="w-16 h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-6">
+                <div class="glass-effect rounded-2xl p-6 md:p-8 hover-lift service-card">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-4 md:mb-6">
                         <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
@@ -348,8 +414,8 @@
                 </div>
 
                 <!-- Service 2 -->
-                <div class="glass-effect rounded-2xl p-8 hover-lift service-card">
-                    <div class="w-16 h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-6">
+                <div class="glass-effect rounded-2xl p-6 md:p-8 hover-lift service-card">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-4 md:mb-6">
                         <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
                         </svg>
@@ -362,8 +428,8 @@
                 </div>
 
                 <!-- Service 3 -->
-                <div class="glass-effect rounded-2xl p-8 hover-lift service-card">
-                    <div class="w-16 h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-6">
+                <div class="glass-effect rounded-2xl p-6 md:p-8 hover-lift service-card">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-4 md:mb-6">
                         <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                         </svg>
@@ -381,23 +447,23 @@
     <div class="section-divider max-w-4xl mx-auto"></div>
 
     <!-- Methodology Section -->
-    <section id="metodologia" class="py-32 reveal">
+    <section id="metodologia" class="py-16 md:py-32 reveal">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
+            <div class="text-center mb-12 md:mb-20">
                 <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Metodología</span>
-                <h2 class="text-5xl font-black mt-4 mb-6">
+                <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-black mt-4 mb-4 md:mb-6">
                     Transformación <span class="gradient-text">por etapas</span>
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-base md:text-xl text-gray-300 max-w-3xl mx-auto">
                     Implementamos cambios de forma estructurada y sostenible, con resultados visibles en cada fase
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 relative">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 relative">
                 <!-- Step 1 -->
                 <div class="relative process-step">
-                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-8 border border-engine-beige/30 h-full hover-lift service-card">
-                        <div class="text-6xl font-black text-engine-beige/30 mb-4">01</div>
+                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-6 md:p-8 border border-engine-beige/30 h-full hover-lift service-card">
+                        <div class="text-5xl md:text-6xl font-black text-engine-beige/30 mb-3 md:mb-4">01</div>
                         <h3 class="text-2xl font-bold mb-4">Diagnóstico + Quick Wins</h3>
                         <p class="text-gray-300 leading-relaxed">
                             Mapeo rápido de la situación actual, priorización de oportunidades 
@@ -408,8 +474,8 @@
 
                 <!-- Step 2 -->
                 <div class="relative process-step">
-                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-8 border border-engine-beige/30 h-full hover-lift service-card">
-                        <div class="text-6xl font-black text-engine-beige/30 mb-4">02</div>
+                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-6 md:p-8 border border-engine-beige/30 h-full hover-lift service-card">
+                        <div class="text-5xl md:text-6xl font-black text-engine-beige/30 mb-3 md:mb-4">02</div>
                         <h3 class="text-2xl font-bold mb-4">Implementación Focalizada</h3>
                         <p class="text-gray-300 leading-relaxed">
                             Automatizaciones clave, diseño de tableros de control y 
@@ -420,8 +486,8 @@
 
                 <!-- Step 3 -->
                 <div class="relative process-step">
-                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-8 border border-engine-beige/30 h-full hover-lift service-card">
-                        <div class="text-6xl font-black text-engine-beige/30 mb-4">03</div>
+                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-6 md:p-8 border border-engine-beige/30 h-full hover-lift service-card">
+                        <div class="text-5xl md:text-6xl font-black text-engine-beige/30 mb-3 md:mb-4">03</div>
                         <h3 class="text-2xl font-bold mb-4">Escalado & Sostenibilidad</h3>
                         <p class="text-gray-300 leading-relaxed">
                             Mejora continua, desarrollo de métricas avanzadas, 
@@ -436,33 +502,33 @@
     <div class="section-divider max-w-4xl mx-auto"></div>
 
     <!-- About Section -->
-    <section id="nosotros" class="py-32 bg-gradient-to-b from-transparent to-engine-blue-dark/50 reveal">
+    <section id="nosotros" class="py-16 md:py-32 bg-gradient-to-b from-transparent to-engine-blue-dark/50 reveal">
         <div class="max-w-7xl mx-auto px-6">
             <!-- Header -->
-            <div class="text-center mb-20">
-                <h2 class="text-6xl md:text-7xl font-black mb-6">
+            <div class="text-center mb-12 md:mb-20">
+                <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 md:mb-6">
                     NUESTRO EQUIPO.<br/>
                     <span class="gradient-text">NUESTRO MOTOR.</span>
                 </h2>
-                <p class="text-2xl text-gray-300 uppercase tracking-wide">
+                <p class="text-lg md:text-2xl text-gray-300 uppercase tracking-wide">
                     Profesionales enfocados en tu eficiencia.
                 </p>
             </div>
 
             <!-- Team Section -->
-            <div class="mb-32">
-                <h3 class="text-4xl font-black mb-12 text-center">
+            <div class="mb-16 md:mb-32">
+                <h3 class="section-title text-3xl md:text-4xl font-black mb-8 md:mb-12 text-center">
                     Descubrí nuestro <span class="gradient-text">equipo</span>
                 </h3>
                 
-                <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
                     <!-- Team Member 1 -->
                     <div class="glass-effect rounded-3xl overflow-hidden hover-lift service-card">
                         <div class="aspect-square bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 overflow-hidden">
                             <img src="IMG_5951.jpg" alt="Enzo Benítez" class="w-full h-full object-cover">
                         </div>
-                        <div class="p-8 text-center">
-                            <h4 class="text-3xl font-bold mb-2">Enzo Benítez</h4>
+                        <div class="p-6 md:p-8 text-center">
+                            <h4 class="team-name text-2xl md:text-3xl font-bold mb-2">Enzo Benítez</h4>
                             <p class="text-engine-beige text-sm uppercase tracking-wider font-semibold">Co-Founder & CEO</p>
                         </div>
                     </div>
@@ -471,8 +537,8 @@
                         <div class="aspect-square bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 overflow-hidden">
                             <img src="d8ca0947-4b72-49de-a78f-93cf25e61ffd.jpg" alt="Paul Rizzoli" class="w-full h-full object-cover">
                         </div>
-                        <div class="p-8 text-center">
-                            <h4 class="text-3xl font-bold mb-2">Paul Rizzoli</h4>
+                        <div class="p-6 md:p-8 text-center">
+                            <h4 class="team-name text-2xl md:text-3xl font-bold mb-2">Paul Rizzoli</h4>
                             <p class="text-engine-beige text-sm uppercase tracking-wider font-semibold">Co-Founder & COO</p>
                         </div>
                     </div>
@@ -481,13 +547,13 @@
 
             <!-- How We Work Section -->
             <div class="max-w-5xl mx-auto">
-                <h3 class="text-4xl font-black mb-16 text-center">
+                <h3 class="section-title text-3xl md:text-4xl font-black mb-10 md:mb-16 text-center">
                     Cómo <span class="gradient-text">trabajamos</span>
                 </h3>
                 
-                <div class="grid md:grid-cols-2 gap-8">
+                <div class="grid sm:grid-cols-2 gap-6 md:gap-8">
                     <!-- Work Method 1 -->
-                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-3xl p-10 border border-engine-beige/30 hover-lift service-card">
+                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-3xl p-6 md:p-10 border border-engine-beige/30 hover-lift service-card">
                         <div class="w-16 h-16 bg-engine-beige rounded-2xl flex items-center justify-center mb-6">
                             <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
@@ -501,7 +567,7 @@
                     </div>
 
                     <!-- Work Method 2 -->
-                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-3xl p-10 border border-engine-beige/30 hover-lift service-card">
+                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-3xl p-6 md:p-10 border border-engine-beige/30 hover-lift service-card">
                         <div class="w-16 h-16 bg-engine-beige rounded-2xl flex items-center justify-center mb-6">
                             <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
@@ -519,19 +585,19 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contacto" class="py-32 relative reveal">
+    <section id="contacto" class="py-16 md:py-32 relative reveal">
         <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-10 w-96 h-96 bg-engine-beige rounded-full filter blur-3xl pulse-slow"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-engine-beige-dark rounded-full filter blur-3xl pulse-slow" style="animation-delay: 2s;"></div>
+            <div class="absolute top-20 left-10 w-64 md:w-96 h-64 md:h-96 bg-engine-beige rounded-full filter blur-3xl pulse-slow"></div>
+            <div class="absolute bottom-20 right-10 w-64 md:w-96 h-64 md:h-96 bg-engine-beige-dark rounded-full filter blur-3xl pulse-slow" style="animation-delay: 2s;"></div>
         </div>
         
         <div class="max-w-4xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-12">
+            <div class="text-center mb-8 md:mb-12">
                 <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Contacto</span>
-                <h2 class="text-5xl font-black mt-4 mb-6">
+                <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-black mt-4 mb-4 md:mb-6">
                     ¿Listo para <span class="gradient-text">transformar</span>?
                 </h2>
-                <p class="text-xl text-gray-300">
+                <p class="text-base md:text-xl text-gray-300">
                     Envianos tu consulta y coordina tu primera reunión de 20 minutos
                 </p>
             </div>
@@ -569,7 +635,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-white/10">
+    <footer class="py-8 md:py-12 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center gap-3">
@@ -579,13 +645,13 @@
                         <div class="text-sm text-gray-400">Consulting</div>
                     </div>
                 </div>
-                <div class="flex gap-8 text-sm text-gray-400">
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-sm text-gray-400">
                     <a href="#servicios" class="hover:text-engine-beige transition-colors">Servicios</a>
                     <a href="#metodologia" class="hover:text-engine-beige transition-colors">Metodología</a>
                     <a href="#nosotros" class="hover:text-engine-beige transition-colors">Nosotros</a>
                     <a href="#contacto" class="hover:text-engine-beige transition-colors">Contacto</a>
                 </div>
-                <div class="text-sm text-gray-400">
+                <div class="text-xs sm:text-sm text-gray-400 text-center">
                     © 2026 Engine Consulting. Todos los derechos reservados.
                 </div>
             </div>
@@ -596,7 +662,9 @@
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
+            const menu = document.getElementById('mobile-menu');
+            const menuOpen = menu && menu.classList.contains('open');
+            if (window.scrollY > 50 || menuOpen) {
                 navbar.classList.add('navbar-scrolled');
             } else {
                 navbar.classList.remove('navbar-scrolled');
@@ -634,11 +702,38 @@
             revealObserver.observe(element);
         });
 
-        // Mobile menu toggle
+        // Mobile menu
         function toggleMobileMenu() {
-            // Implementar menú móvil según necesidad
-            alert('Menú móvil - por implementar');
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('hamburger-btn');
+            const navbar = document.getElementById('navbar');
+            menu.classList.toggle('open');
+            btn.classList.toggle('hamburger-active');
+            // Keep navbar opaque while menu is open
+            if (menu.classList.contains('open')) {
+                navbar.classList.add('navbar-scrolled');
+            } else if (window.scrollY <= 50) {
+                navbar.classList.remove('navbar-scrolled');
+            }
         }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('hamburger-btn');
+            const navbar = document.getElementById('navbar');
+            menu.classList.remove('open');
+            btn.classList.remove('hamburger-active');
+            if (window.scrollY <= 50) {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        }
+
+        // Close mobile menu on resize to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                closeMobileMenu();
+            }
+        });
     </script>
 </body>
 </html>
