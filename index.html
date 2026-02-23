@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>Engine Consulting — Innovación para su Liderazgo Competitivo</title>
-        <!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="ISOLOGO_CIRCULO_BEIGE.png">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -27,11 +28,11 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        
+
         body {
             font-family: 'Inter', sans-serif;
         }
-        
+
         /* Gradient text effect */
         .gradient-text {
             background: linear-gradient(135deg, #AF9071 0%, #D6B89D 50%, #CBAD91 100%);
@@ -39,107 +40,153 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         /* Glass morphism effect */
         .glass-effect {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(203, 173, 145, 0.1);
         }
-        
+
         /* Animated gradient background */
         .animated-gradient {
             background: linear-gradient(135deg, #0E1730 0%, #222C4F 50%, #0E1730 100%);
             background-size: 200% 200%;
             animation: gradientShift 15s ease infinite;
         }
-        
+
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
-        
+
         /* Hover lift effect */
         .hover-lift {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
         }
-        
+
         .hover-lift:hover {
             transform: translateY(-12px) scale(1.02);
             box-shadow: 0 25px 50px rgba(175, 144, 113, 0.2);
         }
-        
+
         /* Fade in animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 0.8s ease-out forwards;
         }
-        
+
         @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
         /* Scroll indicator bounce */
         .scroll-indicator {
             animation: bounce 2s infinite;
         }
-        
+
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
         }
-        
+
         /* Floating animation */
         .float {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
-        
+
         /* Pulse animation */
         .pulse-slow {
             animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
-        
+
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
         }
-        
+
         /* Section divider */
         .section-divider {
             background: linear-gradient(90deg, transparent 0%, #AF9071 50%, transparent 100%);
             height: 1px;
             opacity: 0.3;
         }
-        
+
         /* Navbar scroll effect */
         .navbar-scrolled {
             background: rgba(14, 23, 48, 0.95);
             backdrop-filter: blur(12px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
         /* Button glow effect */
         .btn-glow {
             position: relative;
             overflow: hidden;
         }
-        
+
         .btn-glow::before {
             content: '';
             position: absolute;
@@ -150,17 +197,17 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: left 0.5s;
         }
-        
+
         .btn-glow:hover::before {
             left: 100%;
         }
-        
+
         /* Service card shine effect */
         .service-card {
             position: relative;
             overflow: hidden;
         }
-        
+
         .service-card::after {
             content: '';
             position: absolute;
@@ -172,16 +219,16 @@
             transform: rotate(45deg) translateX(-100%);
             transition: transform 0.6s;
         }
-        
+
         .service-card:hover::after {
             transform: rotate(45deg) translateX(100%);
         }
-        
+
         /* Process step animation */
         .process-step {
             position: relative;
         }
-        
+
         .process-step::before {
             content: '';
             position: absolute;
@@ -192,23 +239,25 @@
             background: linear-gradient(180deg, #AF9071 0%, transparent 100%);
             animation: lineGrow 1s ease-out forwards;
         }
-        
+
         @keyframes lineGrow {
-            to { height: 100%; }
+            to {
+                height: 100%;
+            }
         }
-        
+
         /* Reveal on scroll */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         /* Mobile menu */
         .mobile-menu {
             max-height: 0;
@@ -216,56 +265,486 @@
             transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
             opacity: 0;
         }
-        
+
         .mobile-menu.open {
             max-height: 400px;
             opacity: 1;
         }
 
         /* Force navbar background when mobile menu is open */
-        .mobile-menu.open ~ .nav-bg-trigger,
+        .mobile-menu.open~.nav-bg-trigger,
         #navbar:has(.mobile-menu.open) {
             background: rgba(14, 23, 48, 0.98);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(20px);
         }
-        
+
         /* Hamburger animation */
         .hamburger-line {
             transition: transform 0.3s ease, opacity 0.3s ease;
             transform-origin: center;
         }
-        
+
         .hamburger-active .hamburger-line:nth-child(1) {
             transform: translateY(8px) rotate(45deg);
         }
-        
+
         .hamburger-active .hamburger-line:nth-child(2) {
             opacity: 0;
         }
-        
+
         .hamburger-active .hamburger-line:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
         }
-        
+
+        /* ── Hero Video ── */
+        .hero-video-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            min-width: 100vw;
+            min-height: 100vh;
+            object-fit: cover;
+            object-position: center center;
+            transform: scale(1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(14, 23, 48, 0.55) 0%, rgba(14, 23, 48, 0.80) 100%);
+        }
+
+        /* Spotlight effect (cursor-following) */
+        .hero-spotlight {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                    rgba(203, 173, 145, 0.08) 0%, transparent 60%);
+            transition: background 0.15s ease;
+        }
+
+        .hero-content-enter {
+            opacity: 0;
+            transform: translateY(40px) scale(0.97);
+            animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero-delay-1 {
+            animation-delay: 0.4s;
+        }
+
+        .hero-delay-2 {
+            animation-delay: 0.7s;
+        }
+
+        .hero-delay-3 {
+            animation-delay: 1.0s;
+        }
+
+        .hero-delay-4 {
+            animation-delay: 1.3s;
+        }
+
+        @keyframes heroFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ── Animated gradient text shimmer ── */
+        .gradient-text-animated {
+            background: linear-gradient(90deg, #AF9071 0%, #D6B89D 25%, #CBAD91 50%, #AF9071 75%, #D6B89D 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientTextShimmer 4s linear infinite;
+        }
+
+        @keyframes gradientTextShimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* ── Floating particles ── */
+        .particles-container {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) scale(0);
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-10vh) scale(1);
+            }
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ── Reveal variants ── */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.85);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-left.active,
+        .reveal-right.active,
+        .reveal-scale.active {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ── Counter animation ── */
+        .counter-value {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ── Card glow on hover ── */
+        .card-glow {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-glow::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: conic-gradient(from var(--card-angle, 0deg), transparent 60%, rgba(203, 173, 145, 0.3) 80%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .card-glow:hover::before {
+            opacity: 1;
+        }
+
+        /* ── Staggered children animation ── */
+        .stagger-children>* {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stagger-children.active>*:nth-child(1) {
+            transition-delay: 0.1s;
+            opacity: 1;
+            transform: none;
+        }
+
+        .stagger-children.active>*:nth-child(2) {
+            transition-delay: 0.2s;
+            opacity: 1;
+            transform: none;
+        }
+
+        .stagger-children.active>*:nth-child(3) {
+            transition-delay: 0.3s;
+            opacity: 1;
+            transform: none;
+        }
+
+        .stagger-children.active>*:nth-child(4) {
+            transition-delay: 0.4s;
+            opacity: 1;
+            transform: none;
+        }
+
+        .stagger-children.active>*:nth-child(5) {
+            transition-delay: 0.5s;
+            opacity: 1;
+            transform: none;
+        }
+
+        .stagger-children.active>*:nth-child(6) {
+            transition-delay: 0.6s;
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ── Enhanced Glassmorphism ── */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(203, 173, 145, 0.15);
+        }
+
+        .navbar-scrolled {
+            background: rgba(14, 23, 48, 0.75) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ── Button Micro-interactions ── */
+        .btn-micro {
+            transition: transform 0.3s cubic-bezier(.4, 0, .2, 1), filter 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-micro:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+            box-shadow: 0 8px 30px rgba(175, 144, 113, 0.35);
+        }
+
+        /* ── Timeline ── */
+        .timeline-container {
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(175, 144, 113, 0.5) 0%, rgba(175, 144, 113, 0.05) 100%);
+        }
+
+        .timeline-step {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            position: relative;
+            padding-left: 64px;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-step.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 12px;
+            top: 4px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #CBAD91, #AF9071);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 800;
+            color: #0E1730;
+            box-shadow: 0 0 20px rgba(175, 144, 113, 0.4);
+            z-index: 2;
+        }
+
+        .timeline-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(203, 173, 145, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-step.active .timeline-card {
+            border-color: rgba(203, 173, 145, 0.4);
+            box-shadow: 0 8px 32px rgba(175, 144, 113, 0.12);
+        }
+
+        /* ── WhatsApp FAB ── */
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+            cursor: pointer;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fabPulse 2.5s ease-in-out infinite;
+        }
+
+        .whatsapp-fab:hover {
+            transform: scale(1.12);
+            box-shadow: 0 8px 36px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+
+        .whatsapp-fab svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
+        }
+
+        .fab-tooltip {
+            position: absolute;
+            right: 72px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(14, 23, 48, 0.9);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            border: 1px solid rgba(203, 173, 145, 0.2);
+        }
+
+        .whatsapp-fab:hover .fab-tooltip {
+            opacity: 1;
+        }
+
+        @keyframes fabPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+            }
+
+            50% {
+                box-shadow: 0 6px 40px rgba(37, 211, 102, 0.7);
+            }
+        }
+
+        /* ── Form Success ── */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .form-success.show {
+            display: block;
+            animation: heroFadeIn 0.5s ease-out forwards;
+        }
+
+        .form-success .check-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #CBAD91, #AF9071);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ── Responsive: hide videos on small screens ── */
+        @media (max-width: 640px) {
+
+            .hero-video-bg,
+            .metodo-video {
+                display: none !important;
+            }
+
+            .hero-fallback-gradient {
+                display: block !important;
+            }
+
+            .particles-container {
+                display: none;
+            }
+        }
+
+        .hero-fallback-gradient {
+            display: none;
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(135deg, #0E1730 0%, #222C4F 40%, #1a2744 70%, #0E1730 100%);
+            background-size: 300% 300%;
+            animation: gradientShift 15s ease infinite;
+        }
+
         /* Responsive typography & spacing */
         @media (max-width: 767px) {
             .hero-title {
                 font-size: 2.5rem;
                 line-height: 1.1;
             }
+
             .section-title {
                 font-size: 2rem;
             }
+
             .section-padding {
                 padding-top: 4rem;
                 padding-bottom: 4rem;
             }
+
             .team-name {
                 font-size: 1.5rem;
             }
         }
     </style>
 </head>
+
 <body class="bg-engine-blue-dark text-white animated-gradient">
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
@@ -276,68 +755,87 @@
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#servicios" class="hover:text-engine-beige transition-colors duration-300">Servicios</a>
-                    <a href="#metodologia" class="hover:text-engine-beige transition-colors duration-300">Metodología</a>
+                    <a href="#metodologia"
+                        class="hover:text-engine-beige transition-colors duration-300">Metodología</a>
                     <a href="#nosotros" class="hover:text-engine-beige transition-colors duration-300">Nosotros</a>
-                    <a href="#contacto" class="bg-engine-beige text-engine-blue-dark px-6 py-2 rounded-full font-semibold hover:bg-engine-beige-light transition-all duration-300 btn-glow">Contacto</a>
+                    <a href="#contacto"
+                        class="bg-engine-beige text-engine-blue-dark px-6 py-2 rounded-full font-semibold hover:bg-engine-beige-light transition-all duration-300 btn-glow">Contacto</a>
                 </div>
                 <!-- Mobile menu button -->
                 <button id="hamburger-btn" class="md:hidden p-2" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                        <line class="hamburger-line" x1="3" y1="4" x2="21" y2="4"/>
-                        <line class="hamburger-line" x1="3" y1="12" x2="21" y2="12"/>
-                        <line class="hamburger-line" x1="3" y1="20" x2="21" y2="20"/>
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round">
+                        <line class="hamburger-line" x1="3" y1="4" x2="21" y2="4" />
+                        <line class="hamburger-line" x1="3" y1="12" x2="21" y2="12" />
+                        <line class="hamburger-line" x1="3" y1="20" x2="21" y2="20" />
                     </svg>
                 </button>
             </div>
             <!-- Mobile menu -->
             <div id="mobile-menu" class="mobile-menu md:hidden">
                 <div class="flex flex-col space-y-4 pt-4 pb-6 border-t border-white/10 mt-4">
-                    <a href="#servicios" class="text-lg hover:text-engine-beige transition-colors py-2" onclick="closeMobileMenu()">Servicios</a>
-                    <a href="#metodologia" class="text-lg hover:text-engine-beige transition-colors py-2" onclick="closeMobileMenu()">Metodología</a>
-                    <a href="#nosotros" class="text-lg hover:text-engine-beige transition-colors py-2" onclick="closeMobileMenu()">Nosotros</a>
-                    <a href="#contacto" class="bg-engine-beige text-engine-blue-dark px-6 py-3 rounded-full font-semibold text-center hover:bg-engine-beige-light transition-all" onclick="closeMobileMenu()">Contacto</a>
+                    <a href="#servicios" class="text-lg hover:text-engine-beige transition-colors py-2"
+                        onclick="closeMobileMenu()">Servicios</a>
+                    <a href="#metodologia" class="text-lg hover:text-engine-beige transition-colors py-2"
+                        onclick="closeMobileMenu()">Metodología</a>
+                    <a href="#nosotros" class="text-lg hover:text-engine-beige transition-colors py-2"
+                        onclick="closeMobileMenu()">Nosotros</a>
+                    <a href="#contacto"
+                        class="bg-engine-beige text-engine-blue-dark px-6 py-3 rounded-full font-semibold text-center hover:bg-engine-beige-light transition-all"
+                        onclick="closeMobileMenu()">Contacto</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <!-- Animated background elements -->
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-20 left-10 w-96 h-96 bg-engine-beige rounded-full filter blur-3xl float pulse-slow"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-engine-beige-dark rounded-full filter blur-3xl float" style="animation-delay: 2s;"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-engine-blue rounded-full filter blur-3xl pulse-slow" style="animation-delay: 4s;"></div>
-        </div>
-        
+    <section id="hero-section" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Video Background -->
+        <video class="hero-video-bg" autoplay loop muted playsinline>
+            <source src="hero-video.mp4" type="video/mp4">
+        </video>
+        <!-- Fallback gradient for mobile -->
+        <div class="hero-fallback-gradient"></div>
+        <!-- Dark overlay -->
+        <div class="hero-overlay"></div>
+        <!-- Spotlight cursor-following -->
+        <div class="hero-spotlight" id="hero-spotlight"></div>
+        <!-- Floating particles -->
+        <div class="particles-container" id="particles"></div>
+
         <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
-            <div class="mb-8 fade-in">
-                <img src="ISOLOGO_CIRCULO_BEIGE.png" alt="Engine" class="w-20 md:w-32 h-auto mx-auto mb-4 md:mb-6 float">
+            <div class="mb-8 hero-content-enter hero-delay-1">
+                <img src="ISOLOGO_CIRCULO_BEIGE.png" alt="Engine" class="w-20 md:w-32 h-auto mx-auto mb-4 md:mb-6">
             </div>
-            
-            <h1 class="hero-title text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-4 md:mb-6 leading-tight fade-in delay-100">
-                Somos el <span class="gradient-text">motor</span><br/>
-                que convierte<br/>
-                <span class="gradient-text">intención en acción</span>
+
+            <h1
+                class="hero-title text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-4 md:mb-6 leading-tight hero-content-enter hero-delay-2">
+                El motor de tu<br />
+                <span class="gradient-text-animated">transformación</span>
             </h1>
-            
-            <p class="text-base sm:text-lg md:text-2xl text-gray-300 mb-8 md:mb-12 max-w-3xl mx-auto fade-in delay-200 px-2">
-                Impulsamos organizaciones con digitalización práctica, ingeniería de procesos 
+
+            <p
+                class="text-base sm:text-lg md:text-2xl text-gray-300 mb-8 md:mb-12 max-w-3xl mx-auto hero-content-enter hero-delay-3 px-2">
+                Impulsamos organizaciones con digitalización práctica, ingeniería de procesos
                 y transformación medible desde el primer día.
             </p>
-            
-            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center fade-in delay-300 px-4 sm:px-0">
-                <a href="#contacto" class="bg-engine-beige text-engine-blue-dark px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-engine-beige-light transition-all duration-300 hover-lift btn-glow">
+
+            <div
+                class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center hero-content-enter hero-delay-4 px-4 sm:px-0">
+                <a href="#contacto"
+                    class="bg-engine-beige text-engine-blue-dark px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg btn-micro btn-glow">
                     Agenda una llamada
                 </a>
-                <a href="#servicios" class="border-2 border-engine-beige text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-engine-beige/10 transition-all duration-300">
+                <a href="#servicios"
+                    class="border-2 border-engine-beige text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-engine-beige/10 btn-micro">
                     Conoce más
                 </a>
             </div>
-            
-            <div class="mt-12 md:mt-20 scroll-indicator fade-in delay-400">
+
+            <div class="mt-12 md:mt-20 scroll-indicator hero-content-enter hero-delay-4">
                 <svg class="w-6 h-6 mx-auto text-engine-beige" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>
             </div>
         </div>
@@ -348,39 +846,48 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div>
-                    <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Propuesta de Valor</span>
+                    <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Propuesta de
+                        Valor</span>
                     <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-black mt-4 mb-4 md:mb-6">
                         El motor de tu <span class="gradient-text">transformación</span>
                     </h2>
                     <p class="text-base md:text-xl text-gray-300 leading-relaxed mb-6 md:mb-8">
-                        Impulsamos tu organización con digitalización práctica e ingeniería de procesos. 
-                        Trabajamos por etapas, con entregables claros e impacto medible desde el primer paso, 
+                        Impulsamos tu organización con digitalización práctica e ingeniería de procesos.
+                        Trabajamos por etapas, con entregables claros e impacto medible desde el primer paso,
                         sin frenar la operación y acompañando a tu equipo de cerca.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <div class="flex items-center gap-2">
                             <svg class="w-5 h-5 text-engine-beige" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
                             </svg>
                             <span class="text-gray-300">Impacto medible</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <svg class="w-5 h-5 text-engine-beige" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
                             </svg>
                             <span class="text-gray-300">Sin frenar operaciones</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <svg class="w-5 h-5 text-engine-beige" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
                             </svg>
                             <span class="text-gray-300">Acompañamiento cercano</span>
                         </div>
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="w-full h-64 md:h-96 bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 rounded-3xl flex items-center justify-center border border-engine-beige/30 hover-lift service-card">
-                        <img src="LOGO HORIZONTAL ORIGINAL BLANCO.png" alt="Engine Logo" class="w-3/4 md:w-100 h-auto float mt-6 md:mt-10">
+                    <div
+                        class="w-full h-64 md:h-96 bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 rounded-3xl flex items-center justify-center border border-engine-beige/30 hover-lift service-card">
+                        <img src="LOGO HORIZONTAL ORIGINAL BLANCO.png" alt="Engine Logo"
+                            class="w-3/4 md:w-100 h-auto float mt-6 md:mt-10">
                     </div>
                 </div>
             </div>
@@ -395,49 +902,58 @@
             <div class="text-center mb-12 md:mb-20">
                 <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Pilares</span>
                 <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-black mt-4 mb-4 md:mb-6">
-                    Los pilares que nos <span class="gradient-text">definen</span>
+                    Los pilares que nos <span class="gradient-text-animated">definen</span>
                 </h2>
             </div>
-            
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 stagger-children">
                 <!-- Service 1 -->
-                <div class="glass-effect rounded-2xl p-6 md:p-8 hover-lift service-card">
-                    <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-4 md:mb-6">
-                        <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                <div class="glass-effect rounded-2xl p-6 md:p-8 hover-lift service-card card-glow">
+                    <div
+                        class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-4 md:mb-6">
+                        <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Transformación Digital</h3>
                     <p class="text-gray-300 leading-relaxed">
-                        Modernizamos tu gestión con flujos y tableros simples, automatizaciones 
+                        Modernizamos tu gestión con flujos y tableros simples, automatizaciones
                         y datos confiables que impulsan decisiones inteligentes.
                     </p>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="glass-effect rounded-2xl p-6 md:p-8 hover-lift service-card">
-                    <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-4 md:mb-6">
-                        <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                <div class="glass-effect rounded-2xl p-6 md:p-8 hover-lift service-card card-glow">
+                    <div
+                        class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-4 md:mb-6">
+                        <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Ingeniería de Procesos</h3>
                     <p class="text-gray-300 leading-relaxed">
-                        Rediseñamos y estandarizamos para lograr orden, calidad y eficiencia 
+                        Rediseñamos y estandarizamos para lograr orden, calidad y eficiencia
                         sostenibles en toda tu operación.
                     </p>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="glass-effect rounded-2xl p-6 md:p-8 hover-lift service-card">
-                    <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-4 md:mb-6">
-                        <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                <div class="glass-effect rounded-2xl p-6 md:p-8 hover-lift service-card card-glow">
+                    <div
+                        class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-engine-beige to-engine-beige-light rounded-2xl flex items-center justify-center mb-4 md:mb-6">
+                        <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Evaluación de Proyectos</h3>
                     <p class="text-gray-300 leading-relaxed">
-                        Análisis profundo de factibilidad técnico-financiera de tus proyectos 
+                        Análisis profundo de factibilidad técnico-financiera de tus proyectos
                         de inversión para decisiones informadas.
                     </p>
                 </div>
@@ -460,40 +976,55 @@
                 </p>
             </div>
 
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 relative">
-                <!-- Step 1 -->
-                <div class="relative process-step">
-                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-6 md:p-8 border border-engine-beige/30 h-full hover-lift service-card">
-                        <div class="text-5xl md:text-6xl font-black text-engine-beige/30 mb-3 md:mb-4">01</div>
-                        <h3 class="text-2xl font-bold mb-4">Diagnóstico + Quick Wins</h3>
-                        <p class="text-gray-300 leading-relaxed">
-                            Mapeo rápido de la situación actual, priorización de oportunidades 
-                            y mejoras de alto impacto con KPIs iniciales.
-                        </p>
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+                <!-- Video Column (sticky on desktop) -->
+                <div class="md:sticky md:top-28">
+                    <div class="rounded-2xl overflow-hidden border border-engine-beige/20 shadow-2xl">
+                        <video class="metodo-video w-full h-auto" autoplay loop muted playsinline>
+                            <source src="metodologia-video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Mobile-only fallback gradient -->
+                    <div
+                        class="hidden sm:hidden bg-gradient-to-br from-engine-beige/10 to-engine-blue/10 rounded-2xl h-48 mt-4">
                     </div>
                 </div>
 
-                <!-- Step 2 -->
-                <div class="relative process-step">
-                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-6 md:p-8 border border-engine-beige/30 h-full hover-lift service-card">
-                        <div class="text-5xl md:text-6xl font-black text-engine-beige/30 mb-3 md:mb-4">02</div>
-                        <h3 class="text-2xl font-bold mb-4">Implementación Focalizada</h3>
-                        <p class="text-gray-300 leading-relaxed">
-                            Automatizaciones clave, diseño de tableros de control y 
-                            estandarización de procesos críticos.
-                        </p>
-                    </div>
-                </div>
+                <!-- Timeline Column -->
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
 
-                <!-- Step 3 -->
-                <div class="relative process-step">
-                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-2xl p-6 md:p-8 border border-engine-beige/30 h-full hover-lift service-card">
-                        <div class="text-5xl md:text-6xl font-black text-engine-beige/30 mb-3 md:mb-4">03</div>
-                        <h3 class="text-2xl font-bold mb-4">Escalado & Sostenibilidad</h3>
-                        <p class="text-gray-300 leading-relaxed">
-                            Mejora continua, desarrollo de métricas avanzadas, 
-                            gobierno de datos y formación del equipo.
-                        </p>
+                    <div class="timeline-step" data-step="1">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-card">
+                            <h3 class="text-xl md:text-2xl font-bold mb-3">Diagnóstico + Quick Wins</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                Mapeo rápido de la situación actual, priorización de oportunidades
+                                y mejoras de alto impacto con KPIs iniciales.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step" data-step="2">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-card">
+                            <h3 class="text-xl md:text-2xl font-bold mb-3">Implementación Focalizada</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                Automatizaciones clave, diseño de tableros de control y
+                                estandarización de procesos críticos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step" data-step="3">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-card">
+                            <h3 class="text-xl md:text-2xl font-bold mb-3">Escalado & Sostenibilidad</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                Mejora continua, desarrollo de métricas avanzadas,
+                                gobierno de datos y formación del equipo.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -508,7 +1039,7 @@
             <!-- Header -->
             <div class="text-center mb-12 md:mb-20">
                 <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 md:mb-6">
-                    NUESTRO EQUIPO.<br/>
+                    NUESTRO EQUIPO.<br />
                     <span class="gradient-text">NUESTRO MOTOR.</span>
                 </h2>
                 <p class="text-lg md:text-2xl text-gray-300 uppercase tracking-wide">
@@ -521,26 +1052,31 @@
                 <h3 class="section-title text-3xl md:text-4xl font-black mb-8 md:mb-12 text-center">
                     Descubrí nuestro <span class="gradient-text">equipo</span>
                 </h3>
-                
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
                     <!-- Team Member 1 -->
                     <div class="glass-effect rounded-3xl overflow-hidden hover-lift service-card">
-                        <div class="aspect-square bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 overflow-hidden">
+                        <div
+                            class="aspect-square bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 overflow-hidden">
                             <img src="IMG_5951.jpg" alt="Enzo Benítez" class="w-full h-full object-cover">
                         </div>
                         <div class="p-6 md:p-8 text-center">
                             <h4 class="team-name text-2xl md:text-3xl font-bold mb-2">Enzo Benítez</h4>
-                            <p class="text-engine-beige text-sm uppercase tracking-wider font-semibold">Co-Founder & CEO</p>
+                            <p class="text-engine-beige text-sm uppercase tracking-wider font-semibold">Co-Founder & CEO
+                            </p>
                         </div>
                     </div>
                     <!-- Team Member 2 -->
                     <div class="glass-effect rounded-3xl overflow-hidden hover-lift service-card">
-                        <div class="aspect-square bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 overflow-hidden">
-                            <img src="d8ca0947-4b72-49de-a78f-93cf25e61ffd.jpg" alt="Paul Rizzoli" class="w-full h-full object-cover">
+                        <div
+                            class="aspect-square bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 overflow-hidden">
+                            <img src="d8ca0947-4b72-49de-a78f-93cf25e61ffd.jpg" alt="Paul Rizzoli"
+                                class="w-full h-full object-cover">
                         </div>
                         <div class="p-6 md:p-8 text-center">
                             <h4 class="team-name text-2xl md:text-3xl font-bold mb-2">Paul Rizzoli</h4>
-                            <p class="text-engine-beige text-sm uppercase tracking-wider font-semibold">Co-Founder & COO</p>
+                            <p class="text-engine-beige text-sm uppercase tracking-wider font-semibold">Co-Founder & COO
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -551,32 +1087,38 @@
                 <h3 class="section-title text-3xl md:text-4xl font-black mb-10 md:mb-16 text-center">
                     Cómo <span class="gradient-text">trabajamos</span>
                 </h3>
-                
+
                 <div class="grid sm:grid-cols-2 gap-6 md:gap-8">
                     <!-- Work Method 1 -->
-                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-3xl p-6 md:p-10 border border-engine-beige/30 hover-lift service-card">
+                    <div
+                        class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-3xl p-6 md:p-10 border border-engine-beige/30 hover-lift service-card">
                         <div class="w-16 h-16 bg-engine-beige rounded-2xl flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
                         </div>
                         <h4 class="text-2xl font-bold mb-4">Cercanía & claridad</h4>
                         <p class="text-gray-300 text-lg leading-relaxed">
-                            Hablamos en simple y trabajamos codo a codo con tu equipo. 
+                            Hablamos en simple y trabajamos codo a codo con tu equipo.
                             Documentamos todo para que el cambio quede instalado.
                         </p>
                     </div>
 
                     <!-- Work Method 2 -->
-                    <div class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-3xl p-6 md:p-10 border border-engine-beige/30 hover-lift service-card">
+                    <div
+                        class="bg-gradient-to-br from-engine-beige/20 to-transparent rounded-3xl p-6 md:p-10 border border-engine-beige/30 hover-lift service-card">
                         <div class="w-16 h-16 bg-engine-beige rounded-2xl flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                         </div>
                         <h4 class="text-2xl font-bold mb-4">Impacto por etapas</h4>
                         <p class="text-gray-300 text-lg leading-relaxed">
-                            Proyectos modulares con entregables en cada paso. 
+                            Proyectos modulares con entregables en cada paso.
                             Medimos tiempo, costo y calidad para decidir con datos.
                         </p>
                     </div>
@@ -588,10 +1130,13 @@
     <!-- Contact Section -->
     <section id="contacto" class="py-16 md:py-32 relative reveal">
         <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-10 w-64 md:w-96 h-64 md:h-96 bg-engine-beige rounded-full filter blur-3xl pulse-slow"></div>
-            <div class="absolute bottom-20 right-10 w-64 md:w-96 h-64 md:h-96 bg-engine-beige-dark rounded-full filter blur-3xl pulse-slow" style="animation-delay: 2s;"></div>
+            <div
+                class="absolute top-20 left-10 w-64 md:w-96 h-64 md:h-96 bg-engine-beige rounded-full filter blur-3xl pulse-slow">
+            </div>
+            <div class="absolute bottom-20 right-10 w-64 md:w-96 h-64 md:h-96 bg-engine-beige-dark rounded-full filter blur-3xl pulse-slow"
+                style="animation-delay: 2s;"></div>
         </div>
-        
+
         <div class="max-w-4xl mx-auto px-6 relative z-10">
             <div class="text-center mb-8 md:mb-12">
                 <span class="text-engine-beige font-semibold text-sm uppercase tracking-wider">Contacto</span>
@@ -599,34 +1144,75 @@
                     ¿Listo para <span class="gradient-text">transformar</span>?
                 </h2>
                 <p class="text-base md:text-xl text-gray-300">
-                    Envianos tu consulta y coordina tu primera reunión de 20 minutos
+                    Nuestro asistente inteligente te responderá en minutos
                 </p>
             </div>
 
             <div class="glass-effect rounded-2xl p-8 md:p-12 service-card">
-               <form action="https://formspree.io/f/mkovgozd" method="POST" class="space-y-6">
-                    <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-300">Nombre y Apellido</label>
-                        <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors" placeholder="Juan Pérez">
+                <!-- AI-powered badge -->
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <span
+                        class="inline-flex items-center gap-2 bg-engine-beige/10 border border-engine-beige/30 rounded-full px-4 py-1.5 text-sm text-engine-beige font-medium">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        Atención inteligente · Respuesta inmediata
+                    </span>
+                </div>
+
+                <form id="contact-form" action="https://formspree.io/f/mkovgozd" method="POST" class="space-y-6"
+                    data-webhook-url="" data-source="landing-engine" data-agent="ai-assistant" data-flow="n8n-dify">
+                    <!-- Hidden fields for webhook / CRM integration -->
+                    <input type="hidden" name="utm_source" value="">
+                    <input type="hidden" name="utm_medium" value="">
+                    <input type="hidden" name="utm_campaign" value="">
+                    <input type="hidden" name="lead_score" value="hot">
+                    <input type="hidden" name="timestamp" value="">
+                    <input type="hidden" name="page_url" value="">
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-300">Nombre y Apellido</label>
+                            <input type="text" name="name" required
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige focus:ring-1 focus:ring-engine-beige/30 transition-all"
+                                placeholder="Juan Pérez">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-300">Email</label>
+                            <input type="email" name="email" required
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige focus:ring-1 focus:ring-engine-beige/30 transition-all"
+                                placeholder="juan@empresa.com">
+                        </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-300">Email</label>
-                        <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors" placeholder="juan@empresa.com">
+                        <label class="block text-sm font-semibold mb-2 text-gray-300">¿Cuál es tu mayor desafío?</label>
+                        <textarea name="message" rows="4" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige focus:ring-1 focus:ring-engine-beige/30 transition-all resize-none"
+                            placeholder="Cuéntanos brevemente y te contactamos..."></textarea>
                     </div>
-                    <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-300">Mensaje</label>
-                        <textarea name="message" rows="5" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-engine-beige transition-colors resize-none" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-engine-beige text-engine-blue-dark px-8 py-4 rounded-xl font-bold text-lg hover:bg-engine-beige-light transition-all hover-lift btn-glow">
-                        Enviar Mensaje
+                    <button type="submit"
+                        class="w-full bg-engine-beige text-engine-blue-dark px-8 py-4 rounded-xl font-bold text-lg btn-micro btn-glow">
+                        Enviar y conectar con un asesor
                     </button>
                 </form>
 
+                <!-- Success state -->
+                <div id="form-success" class="form-success">
+                    <div class="check-icon">
+                        <svg class="w-8 h-8 text-engine-blue-dark" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">¡Mensaje enviado!</h3>
+                    <p class="text-gray-300">Nuestro equipo se pondrá en contacto contigo pronto.</p>
+                </div>
+
                 <div class="mt-8 pt-8 border-t border-white/10 text-center">
                     <p class="text-gray-300 mb-4">O agenda directamente por WhatsApp</p>
-                    <a href="https://wa.me/3364297328" target="_blank" class="inline-flex items-center gap-2 text-engine-beige hover:text-engine-beige-light transition-colors font-semibold">
+                    <a href="https://wa.me/3364297328" target="_blank"
+                        class="inline-flex items-center gap-2 text-engine-beige hover:text-engine-beige-light transition-colors font-semibold btn-micro">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                         </svg>
                         Contactar por WhatsApp
                     </a>
@@ -634,6 +1220,15 @@
             </div>
         </div>
     </section>
+
+    <!-- WhatsApp Floating Action Button -->
+    <a href="https://wa.me/3364297328" target="_blank" class="whatsapp-fab" aria-label="Contactar por WhatsApp">
+        <span class="fab-tooltip">¿Hablamos?</span>
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
 
     <!-- Footer -->
     <footer class="py-8 md:py-12 border-t border-white/10">
@@ -660,8 +1255,8 @@
     </footer>
 
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
+        // ── Navbar scroll effect ──
+        window.addEventListener('scroll', function () {
             const navbar = document.getElementById('navbar');
             const menu = document.getElementById('mobile-menu');
             const menuOpen = menu && menu.classList.contains('open');
@@ -672,69 +1267,144 @@
             }
         });
 
-        // Smooth scroll
+        // ── Smooth scroll ──
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Reveal on scroll
-        const revealElements = document.querySelectorAll('.reveal');
-        
+        // ── Reveal on scroll (sections + variants + stagger) ──
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        }, {
-            threshold: 0.1
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children').forEach(el => revealObserver.observe(el));
+
+        // ── Timeline scroll animation ──
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
+        document.querySelectorAll('.timeline-step').forEach((step, i) => {
+            step.style.transitionDelay = `${i * 0.2}s`;
+            timelineObserver.observe(step);
         });
 
-        revealElements.forEach(element => {
-            revealObserver.observe(element);
+        // ── Spotlight cursor effect ──
+        const heroSection = document.getElementById('hero-section');
+        const spotlight = document.getElementById('hero-spotlight');
+        if (heroSection && spotlight) {
+            heroSection.addEventListener('mousemove', (e) => {
+                const rect = heroSection.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                spotlight.style.setProperty('--mouse-x', x + '%');
+                spotlight.style.setProperty('--mouse-y', y + '%');
+            });
+        }
+
+        // ── Floating particles ──
+        (function () {
+            const container = document.getElementById('particles');
+            if (!container || window.innerWidth < 768) return;
+            const colors = ['rgba(203,173,145,0.3)', 'rgba(175,144,113,0.2)', 'rgba(214,184,157,0.15)'];
+            for (let i = 0; i < 20; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                const size = Math.random() * 4 + 2;
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.background = colors[Math.floor(Math.random() * colors.length)];
+                p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                p.style.animationDelay = (Math.random() * 10) + 's';
+                container.appendChild(p);
+            }
+        })();
+
+        // ── Card glow rotation ──
+        document.querySelectorAll('.card-glow').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const angle = Math.atan2(y, x) * (180 / Math.PI) + 180;
+                card.style.setProperty('--card-angle', angle + 'deg');
+            });
         });
 
-        // Mobile menu
+        // ── Mobile menu ──
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const btn = document.getElementById('hamburger-btn');
             const navbar = document.getElementById('navbar');
             menu.classList.toggle('open');
             btn.classList.toggle('hamburger-active');
-            // Keep navbar opaque while menu is open
             if (menu.classList.contains('open')) {
                 navbar.classList.add('navbar-scrolled');
             } else if (window.scrollY <= 50) {
                 navbar.classList.remove('navbar-scrolled');
             }
         }
-
         function closeMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const btn = document.getElementById('hamburger-btn');
             const navbar = document.getElementById('navbar');
             menu.classList.remove('open');
             btn.classList.remove('hamburger-active');
-            if (window.scrollY <= 50) {
-                navbar.classList.remove('navbar-scrolled');
-            }
+            if (window.scrollY <= 50) navbar.classList.remove('navbar-scrolled');
         }
-
-        // Close mobile menu on resize to desktop
-        window.addEventListener('resize', function() {
-            if (window.innerWidth >= 768) {
-                closeMobileMenu();
-            }
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 768) closeMobileMenu();
         });
+
+        // ── Contact form: webhook-ready + UTM capture ──
+        (function () {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+            // Auto-fill UTM params from URL
+            const params = new URLSearchParams(window.location.search);
+            ['utm_source', 'utm_medium', 'utm_campaign'].forEach(key => {
+                const input = form.querySelector(`input[name="${key}"]`);
+                if (input && params.get(key)) input.value = params.get(key);
+            });
+            // Set metadata
+            const tsInput = form.querySelector('input[name="timestamp"]');
+            if (tsInput) tsInput.value = new Date().toISOString();
+            const urlInput = form.querySelector('input[name="page_url"]');
+            if (urlInput) urlInput.value = window.location.href;
+
+            form.addEventListener('submit', async function (e) {
+                const webhookUrl = form.dataset.webhookUrl;
+                if (webhookUrl) {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    const payload = Object.fromEntries(formData.entries());
+                    payload._source = form.dataset.source;
+                    payload._agent = form.dataset.agent;
+                    payload._flow = form.dataset.flow;
+                    try {
+                        await fetch(webhookUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                    } catch (err) { console.warn('Webhook error:', err); }
+                    // Show success
+                    form.style.display = 'none';
+                    document.getElementById('form-success').classList.add('show');
+                }
+                // If no webhook URL configured, falls through to Formspree action naturally
+            });
+        })();
     </script>
 </body>
+
 </html>
