@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-engine-beige: #CBAD91;
+  --color-engine-beige-light: #D6B89D;
+  --color-engine-beige-dark: #AF9071;
+  --color-engine-blue: #222C4F;
+  --color-engine-blue-dark: #0E1730;
+}

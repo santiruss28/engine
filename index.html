@@ -10,24 +10,16 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="ISOLOGO_CIRCULO_BEIGE.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'engine-beige': '#CBAD91',
-                        'engine-beige-light': '#D6B89D',
-                        'engine-beige-dark': '#AF9071',
-                        'engine-blue': '#222C4F',
-                        'engine-blue-dark': '#0E1730',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+
+    <!-- Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="dist/output.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
         body {
             font-family: 'Inter', sans-serif;
@@ -751,7 +743,10 @@
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <img src="ISOLOGO_BLANCO.png" alt="Engine Logo" class="h-10 md:h-12 w-auto">
+                    <picture>
+                        <source srcset="ISOLOGO_BLANCO.webp" type="image/webp">
+                        <img src="ISOLOGO_BLANCO.png" alt="Engine Logo" class="h-10 md:h-12 w-auto">
+                    </picture>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#servicios" class="hover:text-engine-beige transition-colors duration-300">Servicios</a>
@@ -805,7 +800,10 @@
 
         <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
             <div class="mb-8 hero-content-enter hero-delay-1">
-                <img src="ISOLOGO_CIRCULO_BEIGE.png" alt="Engine" class="w-20 md:w-32 h-auto mx-auto mb-4 md:mb-6">
+                <picture>
+                    <source srcset="ISOLOGO_CIRCULO_BEIGE.webp" type="image/webp">
+                    <img src="ISOLOGO_CIRCULO_BEIGE.png" alt="Engine" class="w-20 md:w-32 h-auto mx-auto mb-4 md:mb-6">
+                </picture>
             </div>
 
             <h1
@@ -886,8 +884,11 @@
                 <div class="relative">
                     <div
                         class="w-full h-64 md:h-96 bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 rounded-3xl flex items-center justify-center border border-engine-beige/30 hover-lift service-card">
-                        <img src="LOGO HORIZONTAL ORIGINAL BLANCO.png" alt="Engine Logo"
-                            class="w-3/4 md:w-100 h-auto float mt-6 md:mt-10">
+                        <picture>
+                            <source srcset="LOGO_HORIZONTAL_ORIGINAL_BLANCO.webp" type="image/webp">
+                            <img src="LOGO HORIZONTAL ORIGINAL BLANCO.png" alt="Engine Logo"
+                                class="w-3/4 md:w-100 h-auto float mt-6 md:mt-10">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -980,7 +981,7 @@
                 <!-- Video Column (sticky on desktop) -->
                 <div class="md:sticky md:top-28">
                     <div class="rounded-2xl overflow-hidden border border-engine-beige/20 shadow-2xl">
-                        <video class="metodo-video w-full h-auto" autoplay loop muted playsinline>
+                        <video class="metodo-video w-full h-auto" autoplay loop muted playsinline preload="none">
                             <source src="metodologia-video.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -1058,7 +1059,10 @@
                     <div class="glass-effect rounded-3xl overflow-hidden hover-lift service-card">
                         <div
                             class="aspect-square bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 overflow-hidden">
-                            <img src="foto-santi.jpeg" alt="Santiago Russó" class="w-full h-full object-cover">
+                            <picture>
+                                <source srcset="foto-santi.webp" type="image/webp">
+                                <img src="foto-santi.jpeg" alt="Santiago Russó" class="w-full h-full object-cover" loading="lazy">
+                            </picture>
                         </div>
                         <div class="p-6 md:p-8 text-center">
                             <h4 class="team-name text-2xl md:text-3xl font-bold mb-2">Santiago Russó</h4>
@@ -1068,7 +1072,10 @@
                     <div class="glass-effect rounded-3xl overflow-hidden hover-lift service-card">
                         <div
                             class="aspect-square bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 overflow-hidden">
-                            <img src="foto-lauri.jpg" alt="Laureano Chimento" class="w-full h-full object-cover">
+                            <picture>
+                                <source srcset="foto-lauri.webp" type="image/webp">
+                                <img src="foto-lauri.jpg" alt="Laureano Chimento" class="w-full h-full object-cover" loading="lazy">
+                            </picture>
                         </div>
                         <div class="p-6 md:p-8 text-center">
                             <h4 class="team-name text-2xl md:text-3xl font-bold mb-2">Laureano Chimento</h4>
@@ -1078,7 +1085,10 @@
                     <div class="glass-effect rounded-3xl overflow-hidden hover-lift service-card">
                         <div
                             class="aspect-square bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 overflow-hidden">
-                            <img src="foto-enzo.jpg" alt="Enzo Benítez" class="w-full h-full object-cover">
+                            <picture>
+                                <source srcset="foto-enzo.webp" type="image/webp">
+                                <img src="foto-enzo.jpg" alt="Enzo Benítez" class="w-full h-full object-cover" loading="lazy">
+                            </picture>
                         </div>
                         <div class="p-6 md:p-8 text-center">
                             <h4 class="team-name text-2xl md:text-3xl font-bold mb-2">Enzo Benítez</h4>
@@ -1088,7 +1098,10 @@
                     <div class="glass-effect rounded-3xl overflow-hidden hover-lift service-card">
                         <div
                             class="aspect-square bg-gradient-to-br from-engine-beige/20 to-engine-blue/20 overflow-hidden">
-                            <img src="foto-mili.png" alt="Milagros Moran" class="w-full h-full object-cover">
+                            <picture>
+                                <source srcset="foto-mili.webp" type="image/webp">
+                                <img src="foto-mili.png" alt="Milagros Moran" class="w-full h-full object-cover" loading="lazy">
+                            </picture>
                         </div>
                         <div class="p-6 md:p-8 text-center">
                             <h4 class="team-name text-2xl md:text-3xl font-bold mb-2">Milagros Moran</h4>
@@ -1250,7 +1263,10 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center gap-3">
-                    <img src="ISOLOGO_CIRCULO_BEIGE.png" alt="Engine" class="w-10 h-auto">
+                    <picture>
+                        <source srcset="ISOLOGO_CIRCULO_BEIGE.webp" type="image/webp">
+                        <img src="ISOLOGO_CIRCULO_BEIGE.png" alt="Engine" class="w-10 h-auto">
+                    </picture>
                     <div>
                         <div class="font-bold text-lg">ENGINE</div>
                         <div class="text-sm text-gray-400">Consulting</div>

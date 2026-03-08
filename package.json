@@ -1,0 +1,23 @@
+{
+  "name": "engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i src/input.css -o dist/output.css --minify",
+    "build:images": "node scripts/optimize-images.mjs",
+    "build": "npm run build:css && npm run build:images"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:32400/git/santiruss28/engine"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.2.1"
+  }
+}
