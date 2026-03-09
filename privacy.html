@@ -1,187 +1,304 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>Política de Privacidad — Engine Consulting</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="ISOLOGO_CIRCULO_BEIGE.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="dist/output.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.7;
-            color: #1a1a2e;
-            background: #f8f9fa;
-            padding: 2rem 1rem;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0E1730 0%, #222C4F 50%, #0E1730 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 12px;
-            padding: 3rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-        h1 {
-            font-size: 1.8rem;
-            color: #16213e;
-            margin-bottom: 0.5rem;
+
+        .navbar-scrolled {
+            background: rgba(14, 23, 48, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
-        .last-updated {
-            color: #6c757d;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #e9ecef;
+
+        .legal-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(203, 173, 145, 0.1);
+            border-radius: 16px;
         }
-        h2 {
-            font-size: 1.2rem;
-            color: #16213e;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
+
+        .legal-container h1 {
+            background: linear-gradient(135deg, #AF9071 0%, #D6B89D 50%, #CBAD91 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        p, li {
-            color: #333;
-            margin-bottom: 0.75rem;
+
+        .legal-container h2 {
+            color: #CBAD91;
         }
-        ul, ol {
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
+
+        .legal-container h3 {
+            color: #D6B89D;
         }
-        table {
-            width: 100%;
+
+        .legal-container table {
             border-collapse: collapse;
-            margin: 1rem 0;
+            width: 100%;
         }
-        th, td {
-            border: 1px solid #e9ecef;
+
+        .legal-container th,
+        .legal-container td {
+            border: 1px solid rgba(203, 173, 145, 0.15);
             padding: 0.6rem 0.8rem;
             text-align: left;
             font-size: 0.9rem;
         }
-        th {
-            background: #f8f9fa;
+
+        .legal-container th {
+            background: rgba(203, 173, 145, 0.1);
+            color: #CBAD91;
             font-weight: 600;
         }
-        a { color: #0f3460; }
-        .footer {
-            text-align: center;
-            margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e9ecef;
-            color: #6c757d;
-            font-size: 0.85rem;
+
+        .legal-container td {
+            color: #9ca3af;
+        }
+
+        .section-divider {
+            background: linear-gradient(90deg, transparent 0%, #AF9071 50%, transparent 100%);
+            height: 1px;
+            opacity: 0.3;
         }
     </style>
 </head>
-<body>
-<div class="container">
-<h1>Política de Privacidad</h1>
-<p class="last-updated">Última actualización: 4 de marzo de 2026</p>
-<p>La presente Política de Privacidad describe cómo <strong>Engine Consulting</strong> (en adelante, el "<strong>Proveedor</strong>"), con domicilio en la Ciudad Autónoma de Buenos Aires, República Argentina, recopila, utiliza, almacena y protege la información personal en relación con el servicio de middleware para bots de Telegram con integración a inteligencia artificial (en adelante, el "<strong>Servicio</strong>").</p>
-<h2>1. Datos que Recopilamos</h2>
-<h3 style="font-size: 1.05rem; margin-top: 1rem;">1.1 Datos del Cliente (B2B)</h3>
-<ul>
-    <li>Nombre de usuario y contraseña (hash) para acceso al panel de administración.</li>
-    <li>Tokens de API de Telegram y claves de API de Dify proporcionados por el Cliente.</li>
-    <li>Tokens de autenticación de Google (OAuth 2.0) para la integración con Google Drive y Google Sheets.</li>
-</ul>
-<h3 style="font-size: 1.05rem; margin-top: 1rem;">1.2 Datos de Usuarios Finales</h3>
-<p>Cuando los usuarios finales interactúan con los bots configurados por el Cliente, el Servicio procesa:</p>
-<ul>
-    <li>Identificador de usuario de Telegram (ID numérico) y nombre.</li>
-    <li>Contenido de los mensajes: texto, imágenes, archivos de audio y documentos PDF.</li>
-    <li>Metadatos de uso: cantidad de tokens consumidos, latencia y costos de procesamiento.</li>
-</ul>
-<h2>2. Cómo Usamos los Datos</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Dato</th>
-            <th>Finalidad</th>
-            <th>Base Legal</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ID de usuario de Telegram</td>
-            <td>Identificar conversaciones y mantener contexto con el bot</td>
-            <td>Ejecución del contrato</td>
-        </tr>
-        <tr>
-            <td>Contenido de mensajes</td>
-            <td>Enviar a la API de Dify para procesamiento por inteligencia artificial</td>
-            <td>Ejecución del contrato</td>
-        </tr>
-        <tr>
-            <td>Archivos (imágenes, audio, PDF)</td>
-            <td>Procesar mediante Dify y opcionalmente respaldar en Google Drive</td>
-            <td>Ejecución del contrato</td>
-        </tr>
-        <tr>
-            <td>Tokens OAuth de Google</td>
-            <td>Acceder a Google Drive y Google Sheets en nombre del Cliente</td>
-            <td>Consentimiento explícito del Cliente</td>
-        </tr>
-        <tr>
-            <td>Estadísticas de uso</td>
-            <td>Monitoreo, facturación y mejora del Servicio</td>
-            <td>Interés legítimo</td>
-        </tr>
-    </tbody>
-</table>
-<h2>3. Servicios de Terceros</h2>
-<p>El Servicio transmite datos a los siguientes proveedores de terceros para su funcionamiento:</p>
-<ul>
-    <li><strong>Telegram Bot API</strong> — para enviar y recibir mensajes. <a href="https://telegram.org/privacy" target="_blank">Política de Privacidad de Telegram</a>.</li>
-    <li><strong>Dify</strong> — para procesamiento de mensajes mediante inteligencia artificial. Los mensajes y archivos son enviados a la instancia de Dify configurada por el Cliente.</li>
-    <li><strong>Google APIs</strong> (Drive, Sheets) — para almacenamiento de archivos y registro de datos, cuando el Cliente habilita estas integraciones. <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a>.</li>
-    <li><strong>Proveedores de modelos de IA</strong> (Google Gemini, OpenAI, etc.) — utilizados por Dify para generar respuestas. Estos proveedores tienen sus propias políticas de privacidad y retención de datos.</li>
-</ul>
-<h2>4. Uso de los Datos de Google</h2>
-<p>El uso y la transferencia de información recibida de las APIs de Google por parte de esta aplicación se adhieren a la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Política de Datos de Usuario de los Servicios de API de Google</a>, incluyendo los requisitos de Uso Limitado.</p>
-<p>Específicamente:</p>
-<ul>
-    <li>Solo accedemos a los datos de Google Drive y Google Sheets necesarios para las funciones habilitadas por el Cliente (respaldo de archivos y registro en hojas de cálculo).</li>
-    <li>No vendemos datos obtenidos de las APIs de Google.</li>
-    <li>No utilizamos datos de las APIs de Google con fines publicitarios.</li>
-    <li>No transferimos datos de las APIs de Google a terceros, excepto según sea necesario para proveer el Servicio, cumplir con leyes aplicables, o como parte de una fusión o adquisición.</li>
-    <li>Los tokens de acceso y refresh tokens de Google se almacenan de forma cifrada y solo se utilizan para las integraciones autorizadas por el Cliente.</li>
-</ul>
-<h2>5. Almacenamiento y Retención de Datos</h2>
-<ul>
-    <li>Los datos se almacenan en servidores seguros. La base de datos local contiene únicamente identificadores de conversación y estadísticas de uso agregadas.</li>
-    <li>El contenido de los mensajes no se almacena permanentemente en el middleware; se transmite en tiempo real a Dify y a Telegram.</li>
-    <li>Los archivos subidos (imágenes, audio, PDF) se procesan en memoria y se transmiten a los servicios correspondientes sin retención permanente en el middleware.</li>
-    <li>Los datos del Cliente se conservan mientras la cuenta esté activa. Tras la terminación del servicio, los datos se eliminan dentro de los treinta (30) días posteriores.</li>
-</ul>
-<h2>6. Seguridad</h2>
-<p>El Proveedor implementa medidas de seguridad técnicas y organizativas para proteger los datos, incluyendo:</p>
-<ul>
-    <li>Comunicaciones cifradas mediante HTTPS/TLS.</li>
-    <li>Contraseñas almacenadas con hash seguro (bcrypt).</li>
-    <li>Acceso restringido al panel de administración mediante autenticación.</li>
-    <li>Aislamiento de datos entre diferentes Clientes y bots.</li>
-</ul>
-<h2>7. Derechos de los Titulares de Datos</h2>
-<p>Conforme a la Ley N° 25.326 de Protección de Datos Personales de la República Argentina, los titulares de datos personales tienen derecho a:</p>
-<ul>
-    <li><strong>Acceso:</strong> solicitar información sobre los datos personales almacenados.</li>
-    <li><strong>Rectificación:</strong> solicitar la corrección de datos inexactos.</li>
-    <li><strong>Supresión:</strong> solicitar la eliminación de datos personales.</li>
-    <li><strong>Oposición:</strong> oponerse al tratamiento de sus datos.</li>
-</ul>
-<p>Los usuarios finales deben ejercer estos derechos ante el Cliente (responsable del tratamiento), quien podrá contactar al Proveedor para su implementación técnica.</p>
-<p>La DIRECCIÓN NACIONAL DE PROTECCIÓN DE DATOS PERSONALES, órgano de control de la Ley Nº 25.326, tiene la atribución de atender las denuncias y reclamos que interpongan quienes resulten afectados en sus derechos.</p>
-<h2>8. Cambios a esta Política</h2>
-<p>El Proveedor se reserva el derecho de actualizar esta Política de Privacidad. Los cambios serán publicados en esta misma página con la fecha de la última actualización. Se notificará a los Clientes por correo electrónico sobre cambios sustanciales con al menos quince (15) días de anticipación.</p>
-<h2>9. Contacto</h2>
-<p>Para consultas sobre privacidad o para ejercer derechos sobre datos personales:</p>
-<ul>
-    <li>Correo electrónico: <a href="mailto:info@engineconsulting.com.ar">info@engineconsulting.com.ar</a></li>
-</ul>
-<div class="footer">
-    &copy; 2026 Engine Consulting. Todos los derechos reservados.
-</div>
-</div>
+
+<body class="text-white">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 navbar-scrolled">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center space-x-3">
+                    <picture>
+                        <source srcset="ISOLOGO_BLANCO.webp" type="image/webp">
+                        <img src="ISOLOGO_BLANCO.png" alt="Engine Logo" class="h-10 md:h-12 w-auto">
+                    </picture>
+                </a>
+                <div class="flex space-x-8 items-center">
+                    <a href="/"
+                        class="bg-engine-beige text-engine-blue-dark px-6 py-2 rounded-full font-semibold hover:bg-engine-beige-light transition-all duration-300">Volver
+                        al inicio</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="pt-28 pb-16 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto legal-container p-6 sm:p-10 md:p-14">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Política de Privacidad</h1>
+            <p class="text-gray-400 text-sm mb-8 pb-6 border-b border-white/10">Última actualización: 4 de marzo de
+                2026</p>
+
+            <div class="space-y-6 text-gray-300 leading-relaxed">
+                <p>La presente Política de Privacidad describe cómo <strong class="text-white">Engine
+                        Consulting</strong> (en adelante, el "<strong class="text-white">Proveedor</strong>"), con
+                    domicilio en la Ciudad Autónoma de Buenos Aires, República Argentina, recopila, utiliza, almacena y
+                    protege la información personal en relación con el servicio de middleware para bots de Telegram con
+                    integración a inteligencia artificial (en adelante, el "<strong
+                        class="text-white">Servicio</strong>").</p>
+
+                <h2 class="text-xl font-semibold mt-10 mb-4">1. Datos que Recopilamos</h2>
+
+                <h3 class="text-base font-medium mt-6 mb-3">1.1 Datos del Cliente (B2B)</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Nombre de usuario y contraseña (hash) para acceso al panel de administración.</li>
+                    <li>Tokens de API de Telegram y claves de API de Dify proporcionados por el Cliente.</li>
+                    <li>Tokens de autenticación de Google (OAuth 2.0) para la integración con Google Drive y Google
+                        Sheets.</li>
+                </ul>
+
+                <h3 class="text-base font-medium mt-6 mb-3">1.2 Datos de Usuarios Finales</h3>
+                <p>Cuando los usuarios finales interactúan con los bots configurados por el Cliente, el Servicio
+                    procesa:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Identificador de usuario de Telegram (ID numérico) y nombre.</li>
+                    <li>Contenido de los mensajes: texto, imágenes, archivos de audio y documentos PDF.</li>
+                    <li>Metadatos de uso: cantidad de tokens consumidos, latencia y costos de procesamiento.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mt-10 mb-4">2. Cómo Usamos los Datos</h2>
+                <div class="overflow-x-auto">
+                    <table class="my-4 rounded-lg overflow-hidden">
+                        <thead>
+                            <tr>
+                                <th>Dato</th>
+                                <th>Finalidad</th>
+                                <th>Base Legal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ID de usuario de Telegram</td>
+                                <td>Identificar conversaciones y mantener contexto con el bot</td>
+                                <td>Ejecución del contrato</td>
+                            </tr>
+                            <tr>
+                                <td>Contenido de mensajes</td>
+                                <td>Enviar a la API de Dify para procesamiento por inteligencia artificial</td>
+                                <td>Ejecución del contrato</td>
+                            </tr>
+                            <tr>
+                                <td>Archivos (imágenes, audio, PDF)</td>
+                                <td>Procesar mediante Dify y opcionalmente respaldar en Google Drive</td>
+                                <td>Ejecución del contrato</td>
+                            </tr>
+                            <tr>
+                                <td>Tokens OAuth de Google</td>
+                                <td>Acceder a Google Drive y Google Sheets en nombre del Cliente</td>
+                                <td>Consentimiento explícito del Cliente</td>
+                            </tr>
+                            <tr>
+                                <td>Estadísticas de uso</td>
+                                <td>Monitoreo, facturación y mejora del Servicio</td>
+                                <td>Interés legítimo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 class="text-xl font-semibold mt-10 mb-4">3. Servicios de Terceros</h2>
+                <p>El Servicio transmite datos a los siguientes proveedores de terceros para su funcionamiento:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong class="text-white">Telegram Bot API</strong> — para enviar y recibir mensajes. <a
+                            href="https://telegram.org/privacy" target="_blank"
+                            class="text-engine-beige hover:text-engine-beige-light underline transition-colors">Política
+                            de Privacidad de Telegram</a>.</li>
+                    <li><strong class="text-white">Dify</strong> — para procesamiento de mensajes mediante inteligencia
+                        artificial. Los mensajes y archivos son enviados a la instancia de Dify configurada por el
+                        Cliente.</li>
+                    <li><strong class="text-white">Google APIs</strong> (Drive, Sheets) — para almacenamiento de
+                        archivos y registro de datos, cuando el Cliente habilita estas integraciones. <a
+                            href="https://policies.google.com/privacy" target="_blank"
+                            class="text-engine-beige hover:text-engine-beige-light underline transition-colors">Política
+                            de Privacidad de Google</a>.</li>
+                    <li><strong class="text-white">Proveedores de modelos de IA</strong> (Google Gemini, OpenAI, etc.) —
+                        utilizados por Dify para generar respuestas. Estos proveedores tienen sus propias políticas de
+                        privacidad y retención de datos.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mt-10 mb-4">4. Uso de los Datos de Google</h2>
+                <p>El uso y la transferencia de información recibida de las APIs de Google por parte de esta aplicación
+                    se adhieren a la <a href="https://developers.google.com/terms/api-services-user-data-policy"
+                        target="_blank"
+                        class="text-engine-beige hover:text-engine-beige-light underline transition-colors">Política de
+                        Datos de Usuario de los Servicios de API de Google</a>, incluyendo los requisitos de Uso
+                    Limitado.</p>
+                <p>Específicamente:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Solo accedemos a los datos de Google Drive y Google Sheets necesarios para las funciones
+                        habilitadas por el Cliente (respaldo de archivos y registro en hojas de cálculo).</li>
+                    <li>No vendemos datos obtenidos de las APIs de Google.</li>
+                    <li>No utilizamos datos de las APIs de Google con fines publicitarios.</li>
+                    <li>No transferimos datos de las APIs de Google a terceros, excepto según sea necesario para proveer
+                        el Servicio, cumplir con leyes aplicables, o como parte de una fusión o adquisición.</li>
+                    <li>Los tokens de acceso y refresh tokens de Google se almacenan de forma cifrada y solo se utilizan
+                        para las integraciones autorizadas por el Cliente.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mt-10 mb-4">5. Almacenamiento y Retención de Datos</h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Los datos se almacenan en servidores seguros. La base de datos local contiene únicamente
+                        identificadores de conversación y estadísticas de uso agregadas.</li>
+                    <li>El contenido de los mensajes no se almacena permanentemente en el middleware; se transmite en
+                        tiempo real a Dify y a Telegram.</li>
+                    <li>Los archivos subidos (imágenes, audio, PDF) se procesan en memoria y se transmiten a los
+                        servicios correspondientes sin retención permanente en el middleware.</li>
+                    <li>Los datos del Cliente se conservan mientras la cuenta esté activa. Tras la terminación del
+                        servicio, los datos se eliminan dentro de los treinta (30) días posteriores.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mt-10 mb-4">6. Seguridad</h2>
+                <p>El Proveedor implementa medidas de seguridad técnicas y organizativas para proteger los datos,
+                    incluyendo:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Comunicaciones cifradas mediante HTTPS/TLS.</li>
+                    <li>Contraseñas almacenadas con hash seguro (bcrypt).</li>
+                    <li>Acceso restringido al panel de administración mediante autenticación.</li>
+                    <li>Aislamiento de datos entre diferentes Clientes y bots.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mt-10 mb-4">7. Derechos de los Titulares de Datos</h2>
+                <p>Conforme a la Ley N° 25.326 de Protección de Datos Personales de la República Argentina, los
+                    titulares de datos personales tienen derecho a:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong class="text-white">Acceso:</strong> solicitar información sobre los datos personales
+                        almacenados.</li>
+                    <li><strong class="text-white">Rectificación:</strong> solicitar la corrección de datos
+                        inexactos.</li>
+                    <li><strong class="text-white">Supresión:</strong> solicitar la eliminación de datos personales.</li>
+                    <li><strong class="text-white">Oposición:</strong> oponerse al tratamiento de sus datos.</li>
+                </ul>
+                <p>Los usuarios finales deben ejercer estos derechos ante el Cliente (responsable del tratamiento), quien
+                    podrá contactar al Proveedor para su implementación técnica.</p>
+                <p>La DIRECCIÓN NACIONAL DE PROTECCIÓN DE DATOS PERSONALES, órgano de control de la Ley Nº 25.326,
+                    tiene la atribución de atender las denuncias y reclamos que interpongan quienes resulten afectados en
+                    sus derechos.</p>
+
+                <h2 class="text-xl font-semibold mt-10 mb-4">8. Cambios a esta Política</h2>
+                <p>El Proveedor se reserva el derecho de actualizar esta Política de Privacidad. Los cambios serán
+                    publicados en esta misma página con la fecha de la última actualización. Se notificará a los Clientes
+                    por correo electrónico sobre cambios sustanciales con al menos quince (15) días de anticipación.</p>
+
+                <h2 class="text-xl font-semibold mt-10 mb-4">9. Contacto</h2>
+                <p>Para consultas sobre privacidad o para ejercer derechos sobre datos personales:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Correo electrónico: <a href="mailto:info@engineconsulting.com.ar"
+                            class="text-engine-beige hover:text-engine-beige-light underline transition-colors">info@engineconsulting.com.ar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 md:py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="/" class="flex items-center gap-3">
+                    <picture>
+                        <source srcset="ISOLOGO_CIRCULO_BEIGE.webp" type="image/webp">
+                        <img src="ISOLOGO_CIRCULO_BEIGE.png" alt="Engine" class="w-10 h-auto">
+                    </picture>
+                    <div>
+                        <div class="font-bold text-lg">ENGINE</div>
+                        <div class="text-sm text-gray-400">Consulting</div>
+                    </div>
+                </a>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-sm text-gray-400">
+                    <a href="/" class="hover:text-engine-beige transition-colors">Inicio</a>
+                    <a href="/privacy" class="text-engine-beige">Política de Privacidad</a>
+                    <a href="/terms" class="hover:text-engine-beige transition-colors">Condiciones del Servicio</a>
+                </div>
+                <div class="text-xs sm:text-sm text-gray-400 text-center">
+                    &copy; 2026 Engine Consulting. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
